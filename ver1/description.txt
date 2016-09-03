@@ -1,0 +1,33 @@
+This program, when compiled in eclipse, is meant to run as the Maze_Game.exe found in the ~/debug/ folder.
+Due to lines such as system("cls"), it is meant to be run on windows.
+
+PLANNED:
+  - Building the MapBuilder
+      - Total of let's say 5 custom maps (TBD)
+      - Something like: MAP1          EMPTY
+                        MAP2          EMPTY   etc...
+          - This implies that I must make 5 empty map arrays
+              - I can make each of size 1x1, and whenever deleted revert back to 1x1
+      - Typing in 'w MAP1' will write in MAP1 and fill it
+          - Start by entering in a size using a realloc (will be a square)
+              - Check for appropriate size (at least 4x4 due to walls and since 3x3 has no room inside)
+          - Automatically fill borders will walls
+          - User will input one by one the walls and path and goals
+              - Will check to make sure input is valid (only X, -, |, G, S)
+                  - Either an S for start, or after done building ask for start location
+              - Will NOT check for a valid map (has a solution) as it is too complex for me
+          - Once done, a preview will appear and ask to confirm
+      - Typing in 're MAP1 myMap' will rename MAP1 to be myMap
+      - Typing in 'del MAP1' will delete MAP1 (clear it to default empty, renames to default name)
+  - Incorporating MapBuilder with others
+      - Play must now have a menu to select between maps
+          - It should always have the menu, even if no maps have been made
+          - Only display/allow maps that are not empty/are valid
+          - Go back to menu if you must
+          - Similar build to pages like "Help" and "MapBuilder"
+  - Other concerns
+      - Probably can't save it through sessions
+      - How will Draw() deal with multiple maps?
+          - May have to rework how the current, DEFAULT map is drawn/accessed
+      - Can I make it 'easier' by making a typedef or class instead of sloppy arrays in draw?
+          - Maybe have to make a seperate thing for these arrays
