@@ -8,7 +8,7 @@
 #ifndef INPUT_H_
 #define INPUT_H_
 
-extern char move;
+static char move;
 
 void Input();
 

@@ -3,18 +3,17 @@
  * Allowed user input will modify playerX and playerY, while invalid
  * input calls the method again to restart.
  */
-#include <iostream>
+
 #include "Draw.h"
+#include "Input.h"
 
-using namespace std;
-
-char move = '\0';	//INPUT
+#include <iostream>
 
 void Input()
 {
-	cout << "INPUT: ";
-	cin >> move;
-	cout << endl;
+	std::cout << "INPUT: ";
+	std::cin >> move;
+	std::cout << std::endl;
 	if(move == 'w')
 	{
 		//playerX - 1 to move up map
@@ -26,7 +25,7 @@ void Input()
 		else
 		{
 			//Invalid
-			cout << "INVALID MOVE" << endl;
+			std::cout << "INVALID MOVE" << std::endl;
 			Draw();
 			Input();
 		}
@@ -41,7 +40,7 @@ void Input()
 		else
 		{
 			//Invalid
-			cout << "INVALID MOVE" << endl;
+			std::cout << "INVALID MOVE" << std::endl;
 			Draw();
 			Input();
 		}
@@ -56,7 +55,7 @@ void Input()
 		else
 		{
 			//Invalid
-			cout << "INVALID MOVE" << endl;
+			std::cout << "INVALID MOVE" << std::endl;
 			Draw();
 			Input();
 		}
@@ -71,14 +70,14 @@ void Input()
 		else
 		{
 			//Invalid
-			cout << "INVALID MOVE" << endl;
+			std::cout << "INVALID MOVE" << std::endl;
 			Draw();
 			Input();
 		}
 	}
 	else
 	{
-		cout << "INVALID INPUT" << endl;
+		std::cout << "INVALID INPUT" << std::endl;
 		Draw();
 		Input();
 	}
